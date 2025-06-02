@@ -26,7 +26,6 @@ int main(){
     //leitura dos dados das cartas
         //carta 1
         printf("Insira os dados da primeira carta \n");
-        /*
         printf("Digite a sigla do estado: \n");
         scanf(" %s", estado1);
         printf("Digite o código da carta: \n");
@@ -35,19 +34,15 @@ int main(){
         scanf(" %s", cidade1);
         printf("Digite o número da população: \n");
         scanf(" %d", &populacao1);
-        */
         printf("Digite a área (em km²): \n");
         scanf(" %f", &area1);
-        /*
         printf("Digite o PIB: \n");
         scanf(" %f", &pib1);
         printf("Digite o número de pontos turísticos: \n");
         scanf(" %d", &pontoTur1);
-        */
 
         //carta 2
         printf("Insira os dados da segunda carta \n");
-        /*
         printf("Digite a sigla do estado: \n");
         scanf(" %s", estado2);
         printf("Digite o código da carta: \n");
@@ -56,10 +51,8 @@ int main(){
         scanf(" %s", cidade2);
         printf("Digite o número da população: \n");
         scanf(" %d", &populacao2);
-        */
         printf("Digite a área (em km²): \n");
         scanf(" %f", &area2);
-        /*
         printf("Digite o PIB: \n");
         scanf(" %f", &pib2);
         printf("Digite o número de pontos turísticos: \n");
@@ -78,10 +71,9 @@ int main(){
         pibConversao2 = (pib2 * 1000000000);
         pibCapita2 = (float)(pibConversao2 / populacao2);
         superPoder2 = populacao2 + pib2 + pontoTur2 + pibCapita2 + (-densidadePop2);
-            */
+
 
     //lógica e comparação entre cartas
-        
         //população
         printf("\nComparação entre cartas (Atributo: População)\n");
         printf("Carta 1 - %s (%s): %d\n", cidade1, estado1, populacao1);
@@ -103,7 +95,6 @@ int main(){
         }
  
 
-    /* 
     //comparação dos valores entre as cartas
         int compPopulacao = populacao1 > populacao2;
         int compArea = area1 > area2;
@@ -112,7 +103,6 @@ int main(){
         int compDensidade = densidadePop1 < densidadePop2;
         int compPibCapita = pibCapita1 > pibCapita2;
         int compSuperPoder = superPoder1 > superPoder2;
-    */
 
     return 0;
 }
