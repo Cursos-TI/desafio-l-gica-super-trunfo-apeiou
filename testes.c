@@ -45,8 +45,10 @@ int main(){
 
 
     //lógica e comparação entre cartas
+        printf("\n"); //quebra de página espaçadora
+
         //população
-        printf("\nComparação entre cartas (Atributo: População)\n");
+        printf("Comparação entre cartas (Atributo: População)\n");
         printf("Carta 1 - %s (%s): %lu\n", cidade1, estado1, populacao1);
         printf("Carta 2 - %s (%s): %lu\n", cidade2, estado2, populacao2);
         if(populacao1 > populacao2){
@@ -56,7 +58,7 @@ int main(){
             printf("A cidade %s tem maior população\n", cidade2);
         }
  
-        printf("\nComparação entre cartas (Atributo: População)\n");
+        printf("Comparação entre cartas (Atributo: Área)\n");
         printf("Carta 1 - %s (%s): %f\n", cidade1, estado1, area1);
         printf("Carta 2 - %s (%s): %f\n", cidade2, estado2, area2);
         if(area1 > area2){
@@ -68,18 +70,20 @@ int main(){
 
 
     //exibição do resultado das comparações
+        printf("\n"); //quebra de página espaçadora
+        
         //resultado população
         if(compPopulacao == 1){
-            printf("\nA cidade vencedora com maior população é: %s\n", cidade1);
+            printf("A cidade vencedora com maior população é: %s\n", cidade1);
         }else{
-            printf("\nA cidade vencedora com maior população é: %s\n", cidade2);
+            printf("A cidade vencedora com maior população é: %s\n", cidade2);
         }
 
         //resultado área
         if(compArea == 1){
-            printf("\nA cidade vencedora com maior área é: %s\n", cidade1);
+            printf("A cidade vencedora com maior área é: %s\n", cidade1);
         }else{
-            printf("\nA cidade vencedora com maior área é: %s\n", cidade2);
+            printf("A cidade vencedora com maior área é: %s\n", cidade2);
         }
 
     return 0;
