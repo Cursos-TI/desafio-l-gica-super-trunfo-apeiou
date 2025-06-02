@@ -93,16 +93,6 @@ int main(){
         }else{
             printf("A carta 2 venceu.\n");
         }
- 
-
-    //comparação dos valores entre as cartas
-        int compPopulacao = populacao1 > populacao2;
-        int compArea = area1 > area2;
-        int compPib = pib1 > pib2;
-        int compPontoTur = pontoTur1 > pontoTur2;
-        int compDensidade = densidadePop1 < densidadePop2;
-        int compPibCapita = pibCapita1 > pibCapita2;
-        int compSuperPoder = superPoder1 > superPoder2;
 
     return 0;
 }
