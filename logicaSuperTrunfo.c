@@ -23,6 +23,19 @@ int main(){
         int compPibCapita = 0;
         int compSuperPoder = 0;
 
+        //cálculo de variáveis da carta 1
+        densidadePop1 = (float)((float)populacao1 / area1);
+        pibConversao1 = (pib1 * 1000000000);
+        pibCapita1 = (float)(pibConversao1 / populacao1);
+        superPoder1 = populacao1 + pib1 + pontoTur1 + pibCapita1 + (-densidadePop1);
+
+        //cálculo de variáveis da carta 2
+        densidadePop2 = (float)((float)populacao2 / area2);
+        pibConversao2 = (pib2 * 1000000000);
+        pibCapita2 = (float)(pibConversao2 / populacao2);
+        superPoder2 = populacao2 + pib2 + pontoTur2 + pibCapita2 + (-densidadePop2);        
+
+
 
     //leitura dos dados das cartas
         //carta 1
@@ -60,21 +73,7 @@ int main(){
         scanf(" %d", &pontoTur2);
         
             
-    //lógica de cálculo dos dados e comparações entre cartas
-        //carta 1
-        densidadePop1 = (float)((float)populacao1 / area1);
-        pibConversao1 = (pib1 * 1000000000);
-        pibCapita1 = (float)(pibConversao1 / populacao1);
-        superPoder1 = populacao1 + pib1 + pontoTur1 + pibCapita1 + (-densidadePop1);
-
-        //carta 2
-        densidadePop2 = (float)((float)populacao2 / area2);
-        pibConversao2 = (pib2 * 1000000000);
-        pibCapita2 = (float)(pibConversao2 / populacao2);
-        superPoder2 = populacao2 + pib2 + pontoTur2 + pibCapita2 + (-densidadePop2);
-
-
-    //lógica e comparação entre cartas
+    //lógica de comparação entre cartas
         printf("\n"); //quebra de página espaçadora
 
         //comparação de população
@@ -90,8 +89,8 @@ int main(){
  
         //comparação de área
         printf("Comparação entre cartas (Atributo: Área)\n");
-        printf("Carta 1 - %s (%s): %f\n", cidade1, estado1, area1);
-        printf("Carta 2 - %s (%s): %f\n", cidade2, estado2, area2);
+        printf("Carta 1 - %s (%s): %.2f\n", cidade1, estado1, area1);
+        printf("Carta 2 - %s (%s): %.2f\n", cidade2, estado2, area2);
         if(area1 > area2){
             printf("A cidade %s tem maior área\n", cidade1);
             compArea = 1;
