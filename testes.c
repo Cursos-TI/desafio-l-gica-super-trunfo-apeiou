@@ -16,6 +16,7 @@ int main(){
 
         //comparativos
         int compPopulacao = 0;
+        int compArea = 0;
 
 
     //leitura dos dados das cartas
@@ -27,8 +28,8 @@ int main(){
         scanf(" %s", cidade1);
         printf("Digite o número da população: \n");
         scanf(" %lu", &populacao1);
-        //printf("Digite a área (em km²): \n");
-        //scanf(" %f", &area1);
+        printf("Digite a área (em km²): \n");
+        scanf(" %f", &area1);
 
 
         //carta 2
@@ -39,8 +40,8 @@ int main(){
         scanf(" %s", cidade2);
         printf("Digite o número da população: \n");
         scanf(" %lu", &populacao2);
-        //printf("Digite a área (em km²): \n");
-        //scanf(" %f", &area2);
+        printf("Digite a área (em km²): \n");
+        scanf(" %f", &area2);
 
 
     //lógica e comparação entre cartas
@@ -55,12 +56,30 @@ int main(){
             printf("A cidade %s tem maior população\n", cidade2);
         }
  
+        printf("\nComparação entre cartas (Atributo: População)\n");
+        printf("Carta 1 - %s (%s): %f\n", cidade1, estado1, area1);
+        printf("Carta 2 - %s (%s): %f\n", cidade2, estado2, area2);
+        if(area1 > area2){
+            printf("A cidade %s tem maior área\n", cidade1);
+            compArea = 1;
+        }else{
+            printf("A cidade %s tem maior área\n", cidade2);
+        }
+
+
     //exibição do resultado das comparações
         //resultado população
         if(compPopulacao == 1){
             printf("\nA cidade vencedora com maior população é: %s\n", cidade1);
         }else{
             printf("\nA cidade vencedora com maior população é: %s\n", cidade2);
+        }
+
+        //resultado área
+        if(compArea == 1){
+            printf("\nA cidade vencedora com maior área é: %s\n", cidade1);
+        }else{
+            printf("\nA cidade vencedora com maior área é: %s\n", cidade2);
         }
 
     return 0;
