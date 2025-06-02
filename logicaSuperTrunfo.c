@@ -2,27 +2,26 @@
 
 int main(){
     //banco de variáveis
-        //carta 1
+        //variáveis da carta 1
         char estado1[5], codigo1[5], cidade1[50];
         int pontoTur1;
         unsigned long int populacao1;
         float area1, pib1, densidadePop1, pibConversao1, pibCapita1, superPoder1;
 
-        //carta 2
+        //variáveis da carta 2
         char estado2[5], codigo2[5], cidade2[50];
         int pontoTur2;
         unsigned long int populacao2;
         float area2, pib2, densidadePop2, pibConversao2, pibCapita2, superPoder2;
 
-        //comparação dos valores entre as cartas
-        int compPopulacao;
+        //comparativos (cidades vencedoras)
+        char compPopulacao;
         char compArea;
-        int compPib;
-        int compPontoTur;
-        int compDensidade;
-        int compPibCapita;
-        int compSuperPoder;
-
+        char compPib;
+        char compPontoTur;
+        char compDensidade;
+        char compPibCapita;
+        char compSuperPoder;
 
     //leitura dos dados das cartas
         //carta 1
@@ -82,17 +81,16 @@ int main(){
             */
 
     //lógica e comparação entre cartas
-         /*
+        
         //população
         printf("\nComparação entre cartas (Atributo: População)\n");
         printf("Carta 1 - %s (%s): %d\n", cidade1, estado1, populacao1);
         printf("Carta 2 - %s (%s): %d\n", cidade2, estado2, populacao2);
         if(populacao1 > populacao2){
-            printf("A carta 1 venceu.\n");
+            char compPopulacao = populacao1;
         }else{
             printf("A carta 2 venceu.\n");
         }
-        */
 
         //área
         printf("\nComparação entre cartas (Atributo: Área)\n");
@@ -107,7 +105,7 @@ int main(){
 
     /* 
     //comparação dos valores entre as cartas
-        ok int compPopulacao = populacao1 > populacao2;
+        int compPopulacao = populacao1 > populacao2;
         int compArea = area1 > area2;
         int compPib = pib1 > pib2;
         int compPontoTur = pontoTur1 > pontoTur2;
