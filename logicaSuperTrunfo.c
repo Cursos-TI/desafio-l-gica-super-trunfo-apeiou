@@ -36,14 +36,13 @@ int main(){
         superPoder2 = populacao2 + pib2 + pontoTur2 + pibCapita2 + (-densidadePop2);        
 
 
-
     //leitura dos dados das cartas
         //carta 1
         printf("Insira os dados da primeira carta \n");
         printf("Digite a sigla do estado: \n");
         scanf(" %s", estado1);
-        printf("Digite o código da carta: \n");
-        scanf(" %s", codigo1);
+        //printf("Digite o código da carta: \n");
+        //scanf(" %s", codigo1);
         printf("Digite o nome da cidade: \n");
         scanf(" %s", cidade1);
         printf("Digite o número da população: \n");
@@ -52,15 +51,15 @@ int main(){
         scanf(" %f", &area1);
         printf("Digite o PIB: \n");
         scanf(" %f", &pib1);
-        printf("Digite o número de pontos turísticos: \n");
-        scanf(" %d", &pontoTur1);
+        //printf("Digite o número de pontos turísticos: \n");
+        //scanf(" %d", &pontoTur1);
 
         //carta 2
         printf("Insira os dados da segunda carta \n");
         printf("Digite a sigla do estado: \n");
         scanf(" %s", estado2);
-        printf("Digite o código da carta: \n");
-        scanf(" %s", codigo2);
+        //printf("Digite o código da carta: \n");
+        //scanf(" %s", codigo2);
         printf("Digite o nome da cidade: \n");
         scanf(" %s", cidade2);
         printf("Digite o número da população: \n");
@@ -69,52 +68,85 @@ int main(){
         scanf(" %f", &area2);
         printf("Digite o PIB: \n");
         scanf(" %f", &pib2);
-        printf("Digite o número de pontos turísticos: \n");
-        scanf(" %d", &pontoTur2);
+        //printf("Digite o número de pontos turísticos: \n");
+        //scanf(" %d", &pontoTur2);
         
             
     //lógica de comparação entre cartas
-        printf("\n"); //quebra de página espaçadora
-
         //comparação de população
-        printf("Comparação entre cartas (Atributo: População)\n");
+        printf("\nComparação entre cartas (Atributo: População)\n");
         printf("Carta 1 - %s (%s): %lu\n", cidade1, estado1, populacao1);
         printf("Carta 2 - %s (%s): %lu\n", cidade2, estado2, populacao2);
         if(populacao1 > populacao2){
-            printf("A cidade %s tem maior população\n", cidade1);
             compPopulacao = 1;
         }else{
-            printf("A cidade %s tem maior população\n", cidade2);
+            compPopulacao = 2;
         }
  
         //comparação de área
-        printf("Comparação entre cartas (Atributo: Área)\n");
+        printf("\nComparação entre cartas (Atributo: Área)\n");
         printf("Carta 1 - %s (%s): %.2f\n", cidade1, estado1, area1);
         printf("Carta 2 - %s (%s): %.2f\n", cidade2, estado2, area2);
         if(area1 > area2){
-            printf("A cidade %s tem maior área\n", cidade1);
             compArea = 1;
         }else{
-            printf("A cidade %s tem maior área\n", cidade2);
+            compArea = 2;
+        }
+        
+        //comparação do PIB
+        printf("\nComparação entre cartas (Atributo: PIB)\n");
+        printf("Carta 1 - %s (%s): %.2f\n", cidade1, estado1, pib1);
+        printf("Carta 2 - %s (%s): %.2f\n", cidade2, estado2, pib2);
+        if(pib1 > pib2){
+            compPib = 1;
+        }else{
+            compPib = 2;
+        }
+        
+        //comparação do PIB
+        printf("\nComparação entre cartas (Atributo: PIB)\n");
+        printf("Carta 1 - %s (%s): %.2f\n", cidade1, estado1, pib1);
+        printf("Carta 2 - %s (%s): %.2f\n", cidade2, estado2, pib2);
+        if(pib1 > pib2){
+            compPib = 1;
+        }else{
+            compPib = 2;
         }
 
-
     //exibição do resultado das comparações
-        printf("\n"); //quebra de página espaçadora
-        
-        //resultado população
+        /*
+        //população
         if(compPopulacao == 1){
             printf("A cidade vencedora com maior população é: %s\n", cidade1);
         }else{
             printf("A cidade vencedora com maior população é: %s\n", cidade2);
         }
-        
-        //resultado área
+        //área
         if(compArea == 1){
             printf("A cidade vencedora com maior área é: %s\n", cidade1);
         }else{
             printf("A cidade vencedora com maior área é: %s\n", cidade2);
+        } 
+        //PIB
+        if(compPib == 1){
+            printf("A cidade vencedora com maior PIB é: %s\n", cidade1);
+        }else{
+            printf("A cidade vencedora com maior PIB é: %s\n", cidade2);
         }
+        */
+
+        if(compPopulacao == 1){
+            printf("A cidade vencedora com maior população é: %s\n", cidade1);
+        }else if(compArea == 1){
+            printf("A cidade vencedora com maior área é: %s\n", cidade1);
+        }else if(compPib == 1){
+            printf("A cidade vencedora com maior PIB é: %s\n", cidade1);
+        }else{
+            printf("A cidade vencedora com maior população é: %s\n", cidade2);
+            printf("A cidade vencedora com maior área é: %s\n", cidade2);
+            printf("A cidade vencedora com maior PIB é: %s\n", cidade2);
+        }
+
 
     return 0;
 }
