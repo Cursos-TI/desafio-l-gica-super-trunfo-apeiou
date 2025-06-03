@@ -86,46 +86,26 @@ int main(){
                     printf("7. Super Poder\n");
                     printf("Escolha: ");
                     scanf("%d", &escolhaMenuUm);
-
-                    switch (escolhaMenuUm){
-                    case constant expression:
-                        /* code */
-                        break;
-                    
-                    default:
-                        break;
-                    }
-
                         //quero trocar a lógica para o calculo ser feito fora do menu, onde todos os atributos x > y são feitos via um calculo
                         //e o atributo x < y é feito atráves de outro calculo
                         //o resultado desses calculos são armazenados, para serem usados no menu switch.
                         //desse modo estarei diminuindo as repetições de linhas dentro do código.
-
-
-
-
                     break;
 
                 case 2: //comparacao de 2 atributos
-
-
-
-
-
-
                     break;
                     
                 case 3: //fechar o jogo
                     printf("Obrigado por jogar!\n");
                     break;
                 default: //opcao invalida
-                    print("Opção escolhida inválida.\n");
+                    printf("Opção escolhida inválida.\n");
                     break;
                 }
 
 
-/*
 
+        /*
             printf("\n"); //quebra de linha
             printf("Escolha qual atributo você quer comparar:\n");
             printf("1. População\n");
@@ -237,8 +217,7 @@ int main(){
                 printf("Opção inválida, tente novamente.\n");
                 break;
             }
-
-*/
+        */
 
             
     return 0;
