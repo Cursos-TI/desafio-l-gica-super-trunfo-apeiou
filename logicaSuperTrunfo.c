@@ -3,7 +3,7 @@
 int main(){
     printf("\n\n"); //quebra de linha inicial
 
-    //leitura dos dados das cartas
+    //cadastro das cartas a serem usadas
         //variaveis carta 1
             char estado1[5], codigo1[5], cidade1[50];
             int pontoTur1;
@@ -65,9 +65,67 @@ int main(){
 
     //menu de escolha da comparação
         //variaveis do menu 
-            int escolhaMenu;
+            int escolhaMenuRaiz, escolhaMenuUm, escolhaMenuDois;
 
-        //menu interativo
+        //menu interativo de escolha de 1 ou 2 atributos
+            printf("\n\n"); //quebra de linha
+            printf("Escolha quantos atributos você quer comparar entre as cartas:\n");
+            printf("1. Comparar um único atributo\n");
+            printf("2. Comparar dois atributos\n");
+            printf("3. Finalizar o jogo");
+
+            switch (escolhaMenuRaiz){
+                case 1: //comparacao de 1 atributo
+                    printf("Agora, escolha qual atributo você quer comparar:\n");
+                    printf("1. População\n");
+                    printf("2. Área\n");
+                    printf("3. PIB\n");
+                    printf("4. Pontos Turísticos\n");
+                    printf("5. Densidade Demográfica\n");
+                    printf("6. PIB per Capita\n");
+                    printf("7. Super Poder\n");
+                    printf("Escolha: ");
+                    scanf("%d", &escolhaMenuUm);
+
+                    switch (escolhaMenuUm){
+                    case constant expression:
+                        /* code */
+                        break;
+                    
+                    default:
+                        break;
+                    }
+
+                        //quero trocar a lógica para o calculo ser feito fora do menu, onde todos os atributos x > y são feitos via um calculo
+                        //e o atributo x < y é feito atráves de outro calculo
+                        //o resultado desses calculos são armazenados, para serem usados no menu switch.
+                        //desse modo estarei diminuindo as repetições de linhas dentro do código.
+
+
+
+
+                    break;
+
+                case 2: //comparacao de 2 atributos
+
+
+
+
+
+
+                    break;
+                    
+                case 3: //fechar o jogo
+                    printf("Obrigado por jogar!\n");
+                    break;
+                default: //opcao invalida
+                    print("Opção escolhida inválida.\n");
+                    break;
+                }
+
+
+/*
+
             printf("\n"); //quebra de linha
             printf("Escolha qual atributo você quer comparar:\n");
             printf("1. População\n");
@@ -179,6 +237,8 @@ int main(){
                 printf("Opção inválida, tente novamente.\n");
                 break;
             }
+
+*/
 
             
     return 0;
