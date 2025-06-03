@@ -120,9 +120,19 @@ int main(){
             compPontoTur = 2;
         }
 
+        //comparacao de pib per capita
+        if(pibCapita1 > pibCapita2){
+            printf("%s tem maior PIB per capita.\n", cidade1);
+            compPibCapita = 1;
+        }else{
+            printf("%s tem maior PIB per capita.\n", cidade2);
+            compPibCapita = 2;
+        }
+
 
     //exibicao dos resultados das comparacoes
         printf("\n"); //quebra de linha
+        printf("Resultado das cidades vencedoras:\n");
         //populacao
         if(compPopulacao == 1){
             printf("A cidade vencedora com maior população é: %s\n", cidade1);
@@ -156,6 +166,13 @@ int main(){
             printf("A cidade vencedora com menor densidade populacional é: %s\n", cidade1);
         }else{
             printf("A cidade vencedora com menor densidade populacional é: %s\n", cidade2);
+        }
+
+        //pib per capita
+        if(compPibCapita == 1){
+            printf("A cidade vencedora com maior PIB per capita é: %s\n", cidade1);
+        }else{
+            printf("A cidade vencedora com maior PIB per capita é: %s\n", cidade2);
         }
 
 
