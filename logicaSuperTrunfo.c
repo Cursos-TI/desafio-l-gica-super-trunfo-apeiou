@@ -21,16 +21,16 @@ int main(){
         int compPontoTur = 0;
         int compDensidade = 0;
         int compPibCapita = 0;
-        int compSuperPoder = 0;   
+        int compSuperPoder = 0;
 
 
     //leitura dos dados das cartas
         //carta 1
         printf("Insira os dados da primeira carta \n");
-        //printf("Digite a sigla do estado: \n");
-        //scanf(" %s", estado1);
-        //printf("Digite o código da carta: \n");
-        //scanf(" %s", codigo1);
+        printf("Digite a sigla do estado: \n");
+        scanf(" %s", estado1);
+        printf("Digite o código da carta: \n");
+        scanf(" %s", codigo1);
         printf("Digite o nome da cidade: \n");
         scanf(" %49[^\n]", cidade1);
         printf("Digite o número da população: \n");
@@ -44,10 +44,10 @@ int main(){
 
         //carta 2
         printf("Insira os dados da segunda carta \n");
-        //printf("Digite a sigla do estado: \n");
-        //scanf(" %s", estado2);
-        //printf("Digite o código da carta: \n");
-        //scanf(" %s", codigo2);
+        printf("Digite a sigla do estado: \n");
+        scanf(" %s", estado2);
+        printf("Digite o código da carta: \n");
+        scanf(" %s", codigo2);
         printf("Digite o nome da cidade: \n");
         scanf(" %49[^\n]", cidade2);
         printf("Digite o número da população: \n");
