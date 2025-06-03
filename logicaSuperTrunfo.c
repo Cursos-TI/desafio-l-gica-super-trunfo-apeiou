@@ -21,19 +21,7 @@ int main(){
         int compPontoTur = 0;
         int compDensidade = 0;
         int compPibCapita = 0;
-        int compSuperPoder = 0;
-
-        //calculo de variaveis da carta 1
-        densidadePop1 = (float)((float)populacao1 / area1);
-        pibConversao1 = (pib1 * 1000000000);
-        pibCapita1 = (float)(pibConversao1 / populacao1);
-        superPoder1 = populacao1 + pib1 + pontoTur1 + pibCapita1 + (-densidadePop1);
-
-        //calculo de variaveis da carta 2
-        densidadePop2 = (float)((float)populacao2 / area2);
-        pibConversao2 = (pib2 * 1000000000);
-        pibCapita2 = (float)(pibConversao2 / populacao2);
-        superPoder2 = populacao2 + pib2 + pontoTur2 + pibCapita2 + (-densidadePop2);        
+        int compSuperPoder = 0;   
 
 
     //leitura dos dados das cartas
@@ -44,7 +32,7 @@ int main(){
         //printf("Digite o código da carta: \n");
         //scanf(" %s", codigo1);
         printf("Digite o nome da cidade: \n");
-        scanf(" %s", cidade1);
+        scanf(" %49[^\n]", cidade1);
         printf("Digite o número da população: \n");
         scanf(" %d", &populacao1);
         printf("Digite a área (em km²): \n");
@@ -61,7 +49,7 @@ int main(){
         //printf("Digite o código da carta: \n");
         //scanf(" %s", codigo2);
         printf("Digite o nome da cidade: \n");
-        scanf(" %s", cidade2);
+        scanf(" %49[^\n]", cidade2);
         printf("Digite o número da população: \n");
         scanf(" %d", &populacao2);
         printf("Digite a área (em km²): \n");
@@ -70,6 +58,19 @@ int main(){
         scanf(" %f", &pib2);
         printf("Digite o número de pontos turísticos: \n");
         scanf(" %d", &pontoTur2);
+
+    //calculo das variaveis das cartas
+        //calculo de variaveis da carta 1
+        densidadePop1 = (float)((float)populacao1 / area1);
+        pibConversao1 = (pib1 * 1000000000);
+        pibCapita1 = (float)(pibConversao1 / populacao1);
+        superPoder1 = populacao1 + pib1 + pontoTur1 + pibCapita1 + (-densidadePop1);
+
+        //calculo de variaveis da carta 2
+        densidadePop2 = (float)((float)populacao2 / area2);
+        pibConversao2 = (pib2 * 1000000000);
+        pibCapita2 = (float)(pibConversao2 / populacao2);
+        superPoder2 = populacao2 + pib2 + pontoTur2 + pibCapita2 + (-densidadePop2);  
         
 
     //logica de comparacao entre cartas
@@ -114,10 +115,10 @@ int main(){
         //comparacao de densidade populacional
         if(densidadePop1 < densidadePop2){
             printf("%s tem menor densidade populacional.\n", cidade1);
-            compPontoTur = 1;
+            compDensidade = 1;
         }else{
             printf("%s tem menor densidade populacional.\n", cidade2);
-            compPontoTur = 2;
+            compDensidade = 2;
         }
 
         //comparacao de pib per capita
@@ -171,7 +172,7 @@ int main(){
         }
 
         //densidade populacional
-        if(densidadePop1 == 1){
+        if(compDensidade == 1){
             printf("A cidade vencedora com menor densidade populacional é: %s\n", cidade1);
         }else{
             printf("A cidade vencedora com menor densidade populacional é: %s\n", cidade2);
