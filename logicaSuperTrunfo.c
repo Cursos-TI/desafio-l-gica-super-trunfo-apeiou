@@ -129,6 +129,15 @@ int main(){
             compPibCapita = 2;
         }
 
+        //comparacao do super poder
+        if(superPoder1 > superPoder2){
+            printf("%s tem maior super poder.\n", cidade1);
+            compSuperPoder = 1;
+        }else{
+            printf("%s tem maior super poder.\n", cidade2);
+            compSuperPoder = 2;
+        }
+
 
     //exibicao dos resultados das comparacoes
         printf("\n"); //quebra de linha
@@ -173,6 +182,13 @@ int main(){
             printf("A cidade vencedora com maior PIB per capita é: %s\n", cidade1);
         }else{
             printf("A cidade vencedora com maior PIB per capita é: %s\n", cidade2);
+        }
+
+        //super poder
+        if(compSuperPoder == 1){
+            printf("A cidade vencedora com maior super poder é: %s\n", cidade1);
+        }else{
+            printf("A cidade vencedora com maior super poder é: %s\n", cidade2);
         }
 
 
