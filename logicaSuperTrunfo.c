@@ -83,7 +83,7 @@ int main(){
         //switch menu interativo
             switch (escolhaMenu){
                 
-            //comparativo populacao
+            //comparativo populacao (maior ganha)
             case 1:
                 if(populacao1 > populacao2){
                     printf("A cidade vencedora com maior população é: %s\n", cidade1);
@@ -94,73 +94,73 @@ int main(){
                 }
                 break;
                     
-            //comparativo area
+            //comparativo area (maior ganha)
             case 2:
-                if(populacao1 > populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
-                }else if(populacao1 < populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                if(area1 > area2){
+                    printf("A cidade vencedora com maior área é: %s\n", cidade1);
+                }else if(area1 < area2){
+                    printf("A cidade vencedora com maior área é: %s\n", cidade2);
                 }else{
-                    printf("Empate, as duas cidades têm populações iguais.\n");
+                    printf("Empate, as duas cidades têm áreas iguais.\n");
                 }
                 break;
                 
-            //comparativo pib
+            //comparativo pib (maior ganha)
             case 3:
-                if(populacao1 > populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
-                }else if(populacao1 < populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                if(pib1 > pib2){
+                    printf("A cidade vencedora com maior PIB é: %s\n", cidade1);
+                }else if(pib1 < pib2){
+                    printf("A cidade vencedora com maior PIB é: %s\n", cidade2);
                 }else{
-                    printf("Empate, as duas cidades têm populações iguais.\n");
+                    printf("Empate, as duas cidades têm PIB iguais.\n");
                 }
                 break;
                 
-            //comparativo pontos turisticos
+            //comparativo pontos turisticos (maior ganha)
             case 4:
-                if(populacao1 > populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
-                }else if(populacao1 < populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                if(pontoTur1 > pontoTur2){
+                    printf("A cidade vencedora com mais pontos turísticos é: %s\n", cidade1);
+                }else if(pontoTur1 < pontoTur2){
+                    printf("A cidade vencedora com mais pontos turísticos é: %s\n", cidade2);
                 }else{
-                    printf("Empate, as duas cidades têm populações iguais.\n");
+                    printf("Empate, as duas cidades têm a mesma quantidade de pontos turísticos.\n");
                 }
                 break;
                 
-            //comparativo densidade demografica
+            //comparativo densidade demografica (menor ganha)
             case 5:
-                if(populacao1 > populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
-                }else if(populacao1 < populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                if(densidadePop1 < densidadePop2){
+                    printf("A cidade vencedora com menor densidade populacional é: %s\n", cidade1);
+                }else if(densidadePop1 > densidadePop2){
+                    printf("A cidade vencedora com menor densidade populacional é: %s\n", cidade2);
                 }else{
-                    printf("Empate, as duas cidades têm populações iguais.\n");
+                    printf("Empate, as duas cidades têm a mesma densidade populacional.\n");
                 }
                 break;
                 
-            //comparativo pib per capita
+            //comparativo pib per capita (maior ganha)
             case 6:
-                if(populacao1 > populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
-                }else if(populacao1 < populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                if(pibCapita1 > pibCapita2){
+                    printf("A cidade vencedora com maior PIB per Capita é: %s\n", cidade1);
+                }else if(pibCapita1 < pibCapita2){
+                    printf("A cidade vencedora com maior PIB per Capita é: %s\n", cidade2);
                 }else{
-                    printf("Empate, as duas cidades têm populações iguais.\n");
+                    printf("Empate, as duas cidades têm PIB per Capita iguais.\n");
                 }
                 break;
                 
-            //comparativo super poder
+            //comparativo super poder (maior ganha)
             case 7:
-                if(populacao1 > populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
-                }else if(populacao1 < populacao2){
-                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                if(superPoder1 > superPoder2){
+                    printf("A cidade vencedora com maior 'Super Poder' é: %s\n", cidade1);
+                }else if(superPoder1 < superPoder2){
+                    printf("A cidade vencedora com maior 'Super Poder' é: %s\n", cidade2);
                 }else{
-                    printf("Empate, as duas cidades têm populações iguais.\n");
+                    printf("Empate, as duas cidades têm 'Super Poder' iguais.\n");
                 }
                 break;
 
-            //erro por opção invalida
+            //erro por opção invalida (finaliza o programa, a implementar loop para repetir escolha/tentar novamente)
             default:
                 printf("Opção inválida, tente novamente.\n");
                 break;
