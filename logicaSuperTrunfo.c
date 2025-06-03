@@ -192,6 +192,5 @@ int main(){
             printf("A cidade vencedora com maior super poder é: %s\n", cidade2);
         }
 
-
     return 0;
 }
