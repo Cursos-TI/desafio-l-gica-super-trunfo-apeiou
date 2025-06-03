@@ -66,13 +66,6 @@ int main(){
     //menu de escolha da comparação
         //variaveis do menu 
             int escolhaMenu;
-        //    int compPopulacao = 0;
-        //    int compArea = 0;
-        //    int compPib = 0;
-        //    int compPontoTur = 0;
-        //    int compDensidade = 0;
-        //    int compPibCapita = 0;
-        //    int compSuperPoder = 0;
 
         //menu interativo
             printf("\n"); //quebra de linha
@@ -89,6 +82,8 @@ int main(){
 
         //switch menu interativo
             switch (escolhaMenu){
+                
+            //comparativo populacao
             case 1:
                 if(populacao1 > populacao2){
                     printf("A cidade vencedora com maior população é: %s\n", cidade1);
@@ -98,137 +93,78 @@ int main(){
                     printf("Empate, as duas cidades têm populações iguais.\n");
                 }
                 break;
+                    
+            //comparativo area
             case 2:
-                /* code */
+                if(populacao1 > populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
+                }else if(populacao1 < populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                }else{
+                    printf("Empate, as duas cidades têm populações iguais.\n");
+                }
                 break;
+                
+            //comparativo pib
             case 3:
-                /* code */
+                if(populacao1 > populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
+                }else if(populacao1 < populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                }else{
+                    printf("Empate, as duas cidades têm populações iguais.\n");
+                }
                 break;
+                
+            //comparativo pontos turisticos
             case 4:
-                /* code */
+                if(populacao1 > populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
+                }else if(populacao1 < populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                }else{
+                    printf("Empate, as duas cidades têm populações iguais.\n");
+                }
                 break;
+                
+            //comparativo densidade demografica
             case 5:
-                /* code */
+                if(populacao1 > populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
+                }else if(populacao1 < populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                }else{
+                    printf("Empate, as duas cidades têm populações iguais.\n");
+                }
                 break;
+                
+            //comparativo pib per capita
             case 6:
-                /* code */
+                if(populacao1 > populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
+                }else if(populacao1 < populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                }else{
+                    printf("Empate, as duas cidades têm populações iguais.\n");
+                }
                 break;
+                
+            //comparativo super poder
             case 7:
-                /* code */
+                if(populacao1 > populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade1);
+                }else if(populacao1 < populacao2){
+                    printf("A cidade vencedora com maior população é: %s\n", cidade2);
+                }else{
+                    printf("Empate, as duas cidades têm populações iguais.\n");
+                }
                 break;
+
+            //erro por opção invalida
             default:
                 printf("Opção inválida, tente novamente.\n");
                 break;
             }
 
-            /*
-    //logica de comparacao entre cartas
-        //comparacao de area
-        if(area1 > area2){
-            printf("%s tem maior área.\n", cidade1);
-            compArea = 1;
-        }else{
-            printf("%s tem maior área.\n", cidade2);
-            compArea = 2;
-        }
-        
-        //comparacao do pib
-        if(pib1 > pib2){
-            printf("%s tem maior PIB.\n", cidade1);
-            compPib = 1;
-        }else{
-            printf("%s tem maior PIB.\n", cidade2);
-            compPib = 2;
-        }
-
-        //comparacao de pontos turisticos
-        if(pontoTur1 > pontoTur2){
-            printf("%s tem mais pontos turísticos.\n", cidade1);
-            compPontoTur = 1;
-        }else{
-            printf("%s tem mais pontos turísticos.\n", cidade2);
-            compPontoTur = 2;
-        }
-
-        //comparacao de densidade populacional
-        if(densidadePop1 < densidadePop2){
-            printf("%s tem menor densidade populacional.\n", cidade1);
-            compDensidade = 1;
-        }else{
-            printf("%s tem menor densidade populacional.\n", cidade2);
-            compDensidade = 2;
-        }
-
-        //comparacao de pib per capita
-        if(pibCapita1 > pibCapita2){
-            printf("%s tem maior PIB per capita.\n", cidade1);
-            compPibCapita = 1;
-        }else{
-            printf("%s tem maior PIB per capita.\n", cidade2);
-            compPibCapita = 2;
-        }
-
-        //comparacao do super poder
-        if(superPoder1 > superPoder2){
-            printf("%s tem maior super poder.\n", cidade1);
-            compSuperPoder = 1;
-        }else{
-            printf("%s tem maior super poder.\n", cidade2);
-            compSuperPoder = 2;
-        }
-
-
-    //exibicao dos resultados das comparacoes
-        printf("\n"); //quebra de linha
-        printf("Resultado das cidades vencedoras:\n");
-        //populacao
-        if(compPopulacao == 1){
-            printf("A cidade vencedora com maior população é: %s\n", cidade1);
-        }else{
-            printf("A cidade vencedora com maior população é: %s\n", cidade2);
-        }
-
-        //area
-        if(compArea == 1){
-            printf("A cidade vencedora com maior área é: %s\n", cidade1);
-        }else{
-            printf("A cidade vencedora com maior área é: %s\n", cidade2);
-        } 
-        
-        //pib
-        if(compPib == 1){
-            printf("A cidade vencedora com maior PIB é: %s\n", cidade1);
-        }else{
-            printf("A cidade vencedora com maior PIB é: %s\n", cidade2);
-        }
-
-        //pontos turisticos
-        if(compPontoTur == 1){
-            printf("A cidade vencedora com mais pontos turísticos é: %s\n", cidade1);
-        }else{
-            printf("A cidade vencedora com mais pontos turísticos é: %s\n", cidade2);
-        }
-
-        //densidade populacional
-        if(compDensidade == 1){
-            printf("A cidade vencedora com menor densidade populacional é: %s\n", cidade1);
-        }else{
-            printf("A cidade vencedora com menor densidade populacional é: %s\n", cidade2);
-        }
-
-        //pib per capita
-        if(compPibCapita == 1){
-            printf("A cidade vencedora com maior PIB per capita é: %s\n", cidade1);
-        }else{
-            printf("A cidade vencedora com maior PIB per capita é: %s\n", cidade2);
-        }
-
-        //super poder
-        if(compSuperPoder == 1){
-            printf("A cidade vencedora com maior super poder é: %s\n", cidade1);
-        }else{
-            printf("A cidade vencedora com maior super poder é: %s\n", cidade2);
-        }
-            */
     return 0;
 }
