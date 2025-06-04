@@ -186,7 +186,6 @@ int main(){
                     printf("7. Super Poder\n");
                     printf("Escolha: ");
                     scanf("%d", &escolhaMenuDoisUm);
-                    
                     printf("Escolha o segundo atributo para comparação (diferente do primeiro):\n");
                     printf("1. População\n");
                     printf("2. Área\n");
@@ -197,12 +196,10 @@ int main(){
                     printf("7. Super Poder\n");
                     printf("Escolha: ");
                     scanf("%d", &escolhaMenuDoisDois);
-                    
                 //verifica se atributos escolhidos sao iguais
                     if(escolhaMenuDoisDois == escolhaMenuDoisUm){
                         printf("O segundo atributo não pode ser igual ao primeiro. Tente novamente.\n");
                     }
-
                 //comparacao do primeiro atributo
                     if(escolhaMenuDoisUm == 1){ //populacao maior ganha
                         pontosCarta1 += (populacao1 > populacao2) ? 1 : 0;
@@ -226,7 +223,6 @@ int main(){
                         pontosCarta1 += (superPoder1 > superPoder2) ? 1 : 0;
                         pontosCarta2 += (superPoder1 < superPoder2) ? 1 : 0;
                     }
-
                 //comparacao do segundo atributo
                     if(escolhaMenuDoisDois == 1){ //populacao maior ganha
                         pontosCarta1 += (populacao1 > populacao2) ? 1 : 0;
@@ -250,6 +246,18 @@ int main(){
                         pontosCarta1 += (superPoder1 > superPoder2) ? 1 : 0;
                         pontosCarta2 += (superPoder1 < superPoder2) ? 1 : 0;
                     }
+                //resultado das comparacoes
+                    printf("\n\n"); //quebra de linha
+                    printf("Resultados das comparações:\n");
+                    printf("Carta 1 (%s): %d pontos\n", cidade1, pontosCarta1);
+                    printf("Carta 2 (%s): %d pontos\n", cidade2, pontosCarta2);
+                        if(pontosCarta1 > pontosCarta2){
+                            printf("A carta %s vence!\n", cidade1);
+                        }else if(pontosCarta1 < pontosCarta2){
+                            printf("A carta %s vence!\n", cidade2);
+                        }else{
+                            printf("Empate: as duas cartas têm a mesma pontuação.\n");
+                        }
                 break;
                 
                 case 3: //finalizar jogo
