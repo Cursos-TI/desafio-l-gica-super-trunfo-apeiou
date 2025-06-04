@@ -198,57 +198,58 @@ int main(){
                     printf("Escolha: ");
                     scanf("%d", &escolhaMenuDoisDois);
                     
+                //verifica se atributos escolhidos sao iguais
                     if(escolhaMenuDoisDois == escolhaMenuDoisUm){
                         printf("O segundo atributo não pode ser igual ao primeiro. Tente novamente.\n");
                     }
 
-                    //comparacao do primeiro atributo
-                    if(escolhaMenuDoisUm == 1){ //populacao
-                        if(populacao1 > populacao2){
-                            pontosCarta1++;
-                        }else if(populacao1 < populacao2){
-                            pontosCarta2++;
-                        }
-                        //populacao1 == populacao2 ? pontosCarta1 + 0 : pontosCarta2 + 0;
-                        //populacao1 > populacao2 ? pontosCarta1++ : pontosCarta2++;
+                //comparacao do primeiro atributo
+                    if(escolhaMenuDoisUm == 1){ //populacao maior ganha
+                        pontosCarta1 += (populacao1 > populacao2) ? 1 : 0;
+                        pontosCarta2 += (populacao1 < populacao2) ? 1 : 0;
+                    }else if(escolhaMenuDoisUm == 2){ //area maior ganha
+                        pontosCarta1 += (area1 > area2) ? 1 : 0;
+                        pontosCarta2 += (area1 < area2) ? 1 : 0;
+                    }else if (escolhaMenuDoisUm == 3){ //pib maior ganha
+                        pontosCarta1 += (pib1 > pib2) ? 1 : 0;
+                        pontosCarta2 += (pib1 < pib2) ? 1 : 0;
+                    }else if(escolhaMenuDoisUm == 4){ //ponto turistico maior ganha
+                        pontosCarta1 += (pontoTur1 > pontoTur2) ? 1 : 0;
+                        pontosCarta2 += (pontoTur1 < pontoTur2) ? 1 : 0;
+                    } else if (escolhaMenuDoisUm == 5){ //densidade menor ganha
+                        pontosCarta1 += (densidadePop1 < densidadePop2) ? 1 : 0;
+                        pontosCarta2 += (densidadePop1 > densidadePop2) ? 1 : 0;
+                    }else if(escolhaMenuDoisUm == 6){ //pib capita maior ganha
+                        pontosCarta1 += (pibCapita1 > pibCapita2) ? 1 : 0;
+                        pontosCarta2 += (pibCapita1 < pibCapita2) ? 1 : 0;
+                    }else if(escolhaMenuDoisUm == 7){ //super poder maior ganha
+                        pontosCarta1 += (superPoder1 > superPoder2) ? 1 : 0;
+                        pontosCarta2 += (superPoder1 < superPoder2) ? 1 : 0;
+                    }
 
-                        //pontosCarta1 += (populacao1 > populacao2) ? 1 : 0;
-                        //pontosCarta2 += (populacao1 < populacao2) ? 1 : 0;
-                    }else if(escolhaMenuDoisUm == 2){ //area
-                        if(area1 > area2){
-                            pontosCarta1++;
-                        }else if (area1 < area2){
-                            pontosCarta2++;
-                        }
-                    }else if (escolhaMenuDoisUm == 3){ //pib
-                        if(pib1 > pib2){
-                            pontosCarta1++;
-                        }else if(pib1 < pib2){
-                            pontosCarta2++;
-                        }
-                    }else if(escolhaMenuDoisUm == 4){ //ponto turistico
-                        if(pontoTur1 > pontoTur2){
-                            pontosCarta1++;
-                        }else if(pontoTur1 < pontoTur2){
-                            pontosCarta2++;
-                        }
-                    } else if (escolhaMenuDoisUm == 5){ //densidade
-                        if (densidadePop1 < densidadePop2){
-                            pontosCarta1++;
-                        }else if(densidadePop1 > densidadePop2){
-                            pontosCarta2++;
-                        }
-                    }else if(escolhaMenuDoisUm == 6){ //pib capita
-                        if(pibCapita1 > pibCapita2){
-                            pontosCarta1++;
-                        }else if(pibCapita1 < pibCapita2){
-                            pontosCarta2++;
-                        }
-                    }else if(escolhaMenuDoisUm == 7){ //super poder
-                            pontosCarta1++;
-                        }else if(superPoder1 < superPoder2){
-                            pontosCarta2++;
-                        }
+                //comparacao do segundo atributo
+                    if(escolhaMenuDoisDois == 1){ //populacao maior ganha
+                        pontosCarta1 += (populacao1 > populacao2) ? 1 : 0;
+                        pontosCarta2 += (populacao1 < populacao2) ? 1 : 0;
+                    }else if(escolhaMenuDoisDois == 2){ //area maior ganha
+                        pontosCarta1 += (area1 > area2) ? 1 : 0;
+                        pontosCarta2 += (area1 < area2) ? 1 : 0;
+                    }else if (escolhaMenuDoisDois == 3){ //pib maior ganha
+                        pontosCarta1 += (pib1 > pib2) ? 1 : 0;
+                        pontosCarta2 += (pib1 < pib2) ? 1 : 0;
+                    }else if(escolhaMenuDoisDois == 4){ //ponto turistico maior ganha
+                        pontosCarta1 += (pontoTur1 > pontoTur2) ? 1 : 0;
+                        pontosCarta2 += (pontoTur1 < pontoTur2) ? 1 : 0;
+                    } else if (escolhaMenuDoisDois == 5){ //densidade menor ganha
+                        pontosCarta1 += (densidadePop1 < densidadePop2) ? 1 : 0;
+                        pontosCarta2 += (densidadePop1 > densidadePop2) ? 1 : 0;
+                    }else if(escolhaMenuDoisDois == 6){ //pib capita maior ganha
+                        pontosCarta1 += (pibCapita1 > pibCapita2) ? 1 : 0;
+                        pontosCarta2 += (pibCapita1 < pibCapita2) ? 1 : 0;
+                    }else if(escolhaMenuDoisDois == 7){ //super poder maior ganha
+                        pontosCarta1 += (superPoder1 > superPoder2) ? 1 : 0;
+                        pontosCarta2 += (superPoder1 < superPoder2) ? 1 : 0;
+                    }
                 break;
                 
                 case 3: //finalizar jogo
