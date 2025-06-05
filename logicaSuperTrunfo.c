@@ -20,40 +20,47 @@ int main(){
         int comparaPopulacao, comparaArea, comparaPib, comparaPonto, comparaDensidade, comparaCapita, comparaSuper;
         int pontosCarta1 = 0, pontosCarta2 = 0;
 
+    //inicializacao do jogo
+        printf("\n");
+        printf("### Bem vindo ao jogo Super Trunfo! ###\n");
+        printf("Para começar o jogo, precisamos dos dados da sua carta e da carta de seu oponente.\n");
+        printf("Depois, podemos comparar os atributos e ver qual carta ganha a rodada.\n");
+
+
     //cadastro dos dados da carta 1 (usuario) - revisado
         printf("\n");
-        printf("Insira os dados da sua carta...\n");
+        printf("Por favor, insira os dados da sua carta:\n");
         printf("Digite a sigla do estado: ");
         scanf("%s", estado1);
-        printf("\nDigite o código da carta: ");
+        printf("Digite o código da carta: ");
         scanf("%s", codigo1);
-        printf("\nDigite o nome da cidade: ");
-        scanf("%49[^\n]", cidade1);
-        printf("\nDigite o número da população: ");
+        printf("Digite o nome da cidade: ");
+        scanf(" %49[^\n]", cidade1);
+        printf("Digite o número da população: ");
         scanf("%lu", &populacao1);
-        printf("\nDigite a área (em km²): ");
+        printf("Digite a área (em km²): ");
         scanf("%f", &area1);
-        printf("\nDigite o PIB: ");
+        printf("Digite o PIB: ");
         scanf("%f", &pib1);
-        printf("\nDigite o número de pontos turísticos: \n");
+        printf("Digite o número de pontos turísticos: ");
         scanf("%d", &pontoTur1);
 
     //cadastro dos dados da carta 2 (oponente) - revisado
         printf("\n");
-        printf("Insira os dados da carta do seu oponente...\n");
+        printf("Agora insira os dados da carta do seu oponente:\n");
         printf("Digite a sigla do estado: ");
         scanf("%s", estado2);
-        printf("\nDigite o código da carta: ");
+        printf("Digite o código da carta: ");
         scanf("%s", codigo2);
-        printf("\nDigite o nome da cidade: ");
-        scanf("%49[^\n]", cidade2);
-        printf("\nDigite o número da população: ");
+        printf("Digite o nome da cidade: ");
+        scanf(" %49[^\n]", cidade2);
+        printf("Digite o número da população: ");
         scanf("%lu", &populacao2);
-        printf("\nDigite a área (em km²): ");
+        printf("Digite a área (em km²): ");
         scanf("%f", &area2);
-        printf("\nDigite o PIB: ");
+        printf("Digite o PIB: ");
         scanf("%f", &pib2);
-        printf("\nDigite o número de pontos turísticos: \n");
+        printf("Digite o número de pontos turísticos: ");
         scanf("%d", &pontoTur2);
 
     //calculo de atributos compostos da carta 1 - revisado
@@ -78,11 +85,12 @@ int main(){
         scanf(" %d", &escolhaMenuRaiz);
         switch (escolhaMenuRaiz)
         {
-        //comparar primeiro atributo
+        //comparar primeiro atributo - revisado
             case 1:
                 printf("\n"); //quebra de linha
                 printf("Você escolheu a comparação de um atributo.\n");
-                printf("Escolha o atributo para comparação:\n");
+                printf("\n"); //quebra de linha
+                printf("Agora escolha qual o atributo para comparação:\n");
                 printf("1. População\n");
                 printf("2. Área\n");
                 printf("3. PIB\n");
@@ -97,16 +105,14 @@ int main(){
                 //comparacao de populacao - revisado
                     case 1:
                         printf("\n"); //quebra de linha
-                        printf("A cidade de %s possui %lu habitantes.\n", cidade1, populacao1);
-                        printf("A cidade de %s possui %lu habitantes.\n", cidade2, populacao2);
+                        printf("A sua carta, %s, possui %lu habitantes.\n", cidade1, populacao1);
+                        printf("A carta de seu oponente, %s, possui %lu habitantes.\n", cidade2, populacao2);
+                        printf("\n"); //quebra de linha
                         if(populacao1 > populacao2){
-                            printf("A cidade de %s possui um maior número de habitantes com %lu habitantes.\n", cidade1, populacao1);
                             printf("Parabéns, você venceu seu oponente!\n");
                         }else if(populacao1 < populacao2){
-                            printf("A cidade de %s possui um maior número de habitantes com %lu habitantes.\n", cidade2, populacao2);
                             printf("Infelizmente, você perdeu para seu oponente.\n");
                         }else{
-                            printf("As duas cidades possuem a mesma população.\n");
                             printf("Você e seu oponente empataram a rodada!\n");
                         }
                     break;
@@ -114,16 +120,14 @@ int main(){
                 //comparacao de area - revisado
                     case 2:
                         printf("\n"); //quebra de linha
-                        printf("A cidade de %s possui %.2f km².\n", cidade1, area1);
-                        printf("A cidade de %s possui %.2f km².\n", cidade2, area2);
+                        printf("A sua carta, %s, possui %.2f km².\n", cidade1, area1);
+                        printf("A carta de seu oponente, %s, possui %.2f km².\n", cidade2, area2);
+                        printf("\n"); //quebra de linha
                         if(area1 > area2){
-                            printf("A cidade de %s possui maior área, com %.2f km².\n", cidade1, area1);
                             printf("Parabéns, você venceu seu oponente!\n");
                         }else if(area1 < area2){
-                            printf("A cidade de %s possui maior área, com %.2f km².\n", cidade2, area2);
                             printf("Infelizmente, você perdeu para seu oponente.\n");
                         }else{
-                            printf("As duas cidades possuem a mesma área.\n");
                             printf("Você e seu oponente empataram a rodada!\n");
                         }
                     break;
@@ -131,16 +135,14 @@ int main(){
                 //comparacao de pib - revisado
                     case 3:
                         printf("\n"); //quebra de linha
-                        printf("A cidade de %s possui PIB de R$%.2f bilhões.\n", cidade1, pib1);
-                        printf("A cidade de %s possui PIB de R$%.2f bilhões.\n", cidade2, pib2);
+                        printf("A sua carta, %s, possui PIB de R$%.2f bilhões.\n", cidade1, pib1);
+                        printf("A carta de seu oponente, %s, possui PIB de R$%.2f bilhões.\n", cidade2, pib2);
+                        printf("\n"); //quebra de linha
                         if(pib1 > pib2){
-                            printf("A cidade de %s possui maior PIB, com R$ %.2f bi.\n", cidade1, pib1);
                             printf("Parabéns, você venceu seu oponente!\n");
                         }else if(pib1 < pib2){
-                            printf("A cidade de %s possui maior PIB, com R$ %.2f bi.\n", cidade2, pib2);
                             printf("Infelizmente, você perdeu para seu oponente.\n");
                         }else{
-                            printf("As duas cidades possuem o mesmo PIB.\n");
                             printf("Você e seu oponente empataram a rodada!\n");
                         }
                     break;
@@ -148,16 +150,14 @@ int main(){
                 //comparacao de pontos turisticos - revisado
                     case 4:
                         printf("\n"); //quebra de linha
-                        printf("A cidade de %s possui %d pontos turísticos.\n", cidade1, pontoTur1);
-                        printf("A cidade de %s possui %d pontos turísticos.\n", cidade2, pontoTur2);
+                        printf("A sua carta, %s, possui %d pontos turísticos.\n", cidade1, pontoTur1);
+                        printf("A carta de seu oponente, %s, possui %d pontos turísticos.\n", cidade2, pontoTur2);
+                        printf("\n"); //quebra de linha
                         if(pontoTur1 > pontoTur2){
-                            printf("A cidade de %s possui mais pontos turísticos, com %d pontos.\n", cidade1, pontoTur1);
                             printf("Parabéns, você venceu seu oponente!\n");
                         }else if(pontoTur1 < pontoTur2){
-                            printf("A cidade de %s possui mais pontos turísticos, com %d pontos.\n", cidade2, pontoTur2);
                             printf("Infelizmente, você perdeu para seu oponente.\n");
                         }else{
-                            printf("As duas cidades possuem a mesma quantidade de pontos turísticos.\n");
                             printf("Você e seu oponente empataram a rodada!\n");
                         }
                     break;
@@ -165,16 +165,14 @@ int main(){
                 //comparacao de densidade demografica - revisado
                     case 5:
                         printf("\n"); //quebra de linha
-                        printf("A cidade de %s possui %.2f hab/km².\n", cidade1, densidadePop1);
-                        printf("A cidade de %s possui %.2f hab/km².\n", cidade2, densidadePop2);
+                        printf("A sua carta, %s, possui %.2f hab/km².\n", cidade1, densidadePop1);
+                        printf("A carta de seu oponente, %s, possui %.2f hab/km².\n", cidade2, densidadePop2);
+                        printf("\n"); //quebra de linha
                         if(densidadePop1 < densidadePop2){
-                            printf("A cidade %s possui menor densidade demográfica, com %.2f hab/km².\n", cidade1, densidadePop1);
                             printf("Parabéns, você venceu seu oponente!\n");
                         }else if(densidadePop1 > densidadePop2){
-                            printf("A cidade %s possui menor densidade demográfica, com %.2f hab/km².\n", cidade2, densidadePop2);
                             printf("Infelizmente, você perdeu para seu oponente.\n");
                         }else{
-                            printf("As duas cidades possuem a mesma densidade demográfica.\n");
                             printf("Você e seu oponente empataram a rodada!\n");
                         }
                     break;
@@ -182,16 +180,14 @@ int main(){
                 //comparacao de pib per capita - revisado
                     case 6:
                         printf("\n"); //quebra de linha
-                        printf("A cidade de %s possui PIB per Capita de R$ %.2f.\n", cidade1, pibCapita1);
-                        printf("A cidade de %s possui PIB per Capita de R$ %.2f.\n", cidade2, pibCapita2);
+                        printf("A sua carta, %s, possui PIB per Capita de R$ %.2f.\n", cidade1, pibCapita1);
+                        printf("A carta de seu oponente, %s, possui PIB per Capita de R$ %.2f.\n", cidade2, pibCapita2);
+                        printf("\n"); //quebra de linha
                         if(pibCapita1 > pibCapita2){
-                            printf("A cidade de %s possui maior PIB per Capita, com R$ %.2f.\n", cidade1, pibCapita1);
                             printf("Parabéns, você venceu seu oponente!\n");
                         }else if(pibCapita1 < pibCapita2){
-                            printf("A cidade de %s possui maior PIB per Capita, com R$ %.2f.\n", cidade2, pibCapita2);
                             printf("Infelizmente, você perdeu para seu oponente.\n");
                         }else{
-                            printf("As duas cidades possuem o mesmo PIB per Capita.\n");
                             printf("Você e seu oponente empataram a rodada!\n");
                         }
                     break;
@@ -199,16 +195,14 @@ int main(){
                 //comparacao de super poder
                     case 7:
                         printf("\n"); //quebra de linha
-                        printf("A cidade de %s possui Super Poder de %.2f.\n", cidade1, superPoder1);
-                        printf("A cidade de %s possui Super Poder de %.2f.\n", cidade2, superPoder2);
+                        printf("A sua carta, %s, possui Super Poder de %.2f.\n", cidade1, superPoder1);
+                        printf("A carta de seu oponente, %s, possui Super Poder de %.2f.\n", cidade2, superPoder2);
+                        printf("\n"); //quebra de linha
                         if(superPoder1 > superPoder2){
-                            printf("A cidade de %s vence com maior 'Super Poder'.\n", cidade1);
                             printf("Parabéns, você venceu seu oponente!\n");
                         }else if(superPoder1 < superPoder2){
-                            printf("A cidade de %s vence com maior 'Super Poder'.\n", cidade2);
                             printf("Infelizmente, você perdeu para seu oponente.\n");
                         }else{
-                            printf("As duas cidades possuem o mesmo 'Super Poder'.\n");
                             printf("Você e seu oponente empataram a rodada!\n");
                         }
                     break;
