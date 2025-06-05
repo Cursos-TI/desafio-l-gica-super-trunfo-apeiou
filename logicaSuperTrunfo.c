@@ -22,7 +22,7 @@ int main(){
 
     //cadastro dos dados da carta 1
         printf("\n");
-        printf("Insira os dados da primeira carta \n");
+        printf("Insira os dados da sua carta...\n");
         printf("Digite a sigla do estado: \n");
         scanf(" %s", estado1);
         printf("Digite o código da carta: \n");
@@ -40,7 +40,7 @@ int main(){
 
     //cadastro dos dados da carta 2
         printf("\n");
-        printf("Insira os dados da segunda carta \n");
+        printf("Insira os dados da carta do seu oponente...\n");
         printf("Digite a sigla do estado: \n");
         scanf(" %s", estado2);
         printf("Digite o código da carta: \n");
@@ -78,7 +78,7 @@ int main(){
         scanf(" %d", &escolhaMenuRaiz);
         switch (escolhaMenuRaiz)
         {
-        //comparar 1 atributo
+        //comparar primeiro atributo
             case 1:
                 printf("Você escolheu a comparação de um atributo.\n");
                 printf("Escolha o atributo para comparação:\n");
@@ -98,11 +98,14 @@ int main(){
                         printf("A cidade de %s possui %lu habitantes.\n", cidade1, populacao1);
                         printf("A cidade de %s possui %lu habitantes.\n", cidade2, populacao2);
                         if(populacao1 > populacao2){
-                            printf("A cidade de %s vence com maior número de habitantes.\n", cidade1);
+                            printf("A cidade de %s possui um maior número de habitantes.\n", cidade1);
+                            printf("Parabéns, você venceu seu oponente!\n");
                         }else if(populacao1 < populacao2){
-                            printf("A cidade de %s vence com maior número de habitantes.\n", cidade2);
+                            printf("A cidade de %s possui um maior número de habitantes.\n", cidade2);
+                            printf("Infelizmente, você perdeu para seu oponente.");
                         }else{
-                            printf("Empate: as duas cidades têm populações iguais.\n");
+                            printf("As duas cidades possuem a mesma população.\n");
+                            printf("Você e seu oponente empataram a rodada!");
                         }
                     break;
                 
@@ -112,6 +115,7 @@ int main(){
                         printf("A cidade de %s possui %.2f km².\n", cidade2, area2);
                         if(area1 > area2){
                             printf("A cidade de %s vence com maior área.\n", cidade1);
+                            printf("Você venceu!\n");
                         }else if(area1 < area2){
                             printf("A cidade de %s vence com maior área.\n", cidade2);
                         }else{
@@ -186,7 +190,7 @@ int main(){
                 }
             break;
 
-        //comparar 2 atributos
+        //comparar segundo atributos
             case 2:
                 printf("Escolha o primeiro atributo para comparação:\n");
                 printf("1. População\n");
@@ -265,10 +269,10 @@ int main(){
             //resultado das comparacoes
                 printf("\n");
                 printf("Resultados das comparações:\n");
-                printf("Carta 1 (%s): %d pontos\n", cidade1, pontosCarta1);
-                printf("Carta 2 (%s): %d pontos\n", cidade2, pontosCarta2);
+                printf("A sua carta fez (%s): %d pontos\n", cidade1, pontosCarta1);
+                printf("A carta do inimigo fez (%s): %d pontos\n", cidade2, pontosCarta2);
                     if(pontosCarta1 > pontosCarta2){
-                        printf("A carta %s vence!\n", cidade1);
+                        printf("Você %s vence!\n", cidade1);
                     }else if(pontosCarta1 < pontosCarta2){
                         printf("A carta %s vence!\n", cidade2);
                     }else{
