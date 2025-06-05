@@ -19,8 +19,7 @@ int main(){
     //variaveis da logica de comparacao de dois atributos e resultado- revisado
         int comparaPopulacao, comparaArea, comparaPib, comparaPonto, comparaDensidade, comparaCapita, comparaSuper;
         int pontuacaoUsuario = 0, pontuacaoOponente = 0;
-        char atributoPop[] = "População", atributoArea[] = "Área", atributoPib[] = "PIB", atributoPonto[] = "Pontos Turísticos";
-        char atributoDensidade[] = "Densidade Populacional", atributoPibCapita[] = "PIB per Capita", atributoSuper[] = "Super Poder";
+        char nomeAtributoUm[50], nomeAtributoDois[50];
 
     //inicializacao do jogo - revisado
         printf("\n");
@@ -248,71 +247,90 @@ int main(){
                 }
 
             //comparacao do primeiro atributo - revisado
-                if(escolhaMenuDoisUm == 1){ //populacao
-                    escolhaMenuDoisUm = atributoPop[12];
+                if(escolhaMenuDoisUm == 1){
                     pontuacaoUsuario += (populacao1 > populacao2) ? 1 : 0;
                     pontuacaoOponente += (populacao1 < populacao2) ? 1 : 0;
-                }else if(escolhaMenuDoisUm == 2){ //area
-                    escolhaMenuDoisUm = atributoArea[6];
+                }else if(escolhaMenuDoisUm == 2){
                     pontuacaoUsuario += (area1 > area2) ? 1 : 0;
                     pontuacaoOponente += (area1 < area2) ? 1 : 0;
-                }else if (escolhaMenuDoisUm == 3){ //pib
-                    escolhaMenuDoisUm = atributoPib[4];
+                }else if (escolhaMenuDoisUm == 3){
                     pontuacaoUsuario += (pib1 > pib2) ? 1 : 0;
                     pontuacaoOponente += (pib1 < pib2) ? 1 : 0;
-                }else if(escolhaMenuDoisUm == 4){ //ponto turistico
-                    escolhaMenuDoisUm = atributoPonto[19];
+                }else if(escolhaMenuDoisUm == 4){
                     pontuacaoUsuario += (pontoTur1 > pontoTur2) ? 1 : 0;
                     pontuacaoOponente += (pontoTur1 < pontoTur2) ? 1 : 0;
-                } else if (escolhaMenuDoisUm == 5){ //densidade
-                    escolhaMenuDoisUm = atributoDensidade[23];
+                } else if (escolhaMenuDoisUm == 5){
                     pontuacaoUsuario += (densidadePop1 < densidadePop2) ? 1 : 0;
                     pontuacaoOponente += (densidadePop1 > densidadePop2) ? 1 : 0;
-                }else if(escolhaMenuDoisUm == 6){ //pib capita
-                    escolhaMenuDoisUm = atributoPibCapita[15];
+                }else if(escolhaMenuDoisUm == 6){
                     pontuacaoUsuario += (pibCapita1 > pibCapita2) ? 1 : 0;
                     pontuacaoOponente += (pibCapita1 < pibCapita2) ? 1 : 0;
-                }else if(escolhaMenuDoisUm == 7){ //super poder
-                    escolhaMenuDoisUm = atributoSuper[12];
+                }else if(escolhaMenuDoisUm == 7){
                     pontuacaoUsuario += (superPoder1 > superPoder2) ? 1 : 0;
                     pontuacaoOponente += (superPoder1 < superPoder2) ? 1 : 0;
                 }
 
             //comparacao do segundo atributo - revisado
-                if(escolhaMenuDoisDois == 1){ //populacao
-                    escolhaMenuDoisDois = atributoPop[12];
+                if(escolhaMenuDoisDois == 1){
                     pontuacaoUsuario += (populacao1 > populacao2) ? 1 : 0;
                     pontuacaoOponente += (populacao1 < populacao2) ? 1 : 0;
-                }else if(escolhaMenuDoisDois == 2){ //area
-                    escolhaMenuDoisDois = atributoArea[6];
+                }else if(escolhaMenuDoisDois == 2){
                     pontuacaoUsuario += (area1 > area2) ? 1 : 0;
                     pontuacaoOponente += (area1 < area2) ? 1 : 0;
-                }else if (escolhaMenuDoisDois == 3){ //pib
-                    escolhaMenuDoisDois = atributoPib[4];
+                }else if (escolhaMenuDoisDois == 3){
                     pontuacaoUsuario += (pib1 > pib2) ? 1 : 0;
                     pontuacaoOponente += (pib1 < pib2) ? 1 : 0;
-                }else if(escolhaMenuDoisDois == 4){ //ponto turistico
-                    escolhaMenuDoisDois = atributoPonto[19];
+                }else if(escolhaMenuDoisDois == 4){
                     pontuacaoUsuario += (pontoTur1 > pontoTur2) ? 1 : 0;
                     pontuacaoOponente += (pontoTur1 < pontoTur2) ? 1 : 0;
                 } else if (escolhaMenuDoisDois == 5){
-                    escolhaMenuDoisDois = atributoDensidade[23]; //densidade
                     pontuacaoUsuario += (densidadePop1 < densidadePop2) ? 1 : 0;
                     pontuacaoOponente += (densidadePop1 > densidadePop2) ? 1 : 0;
-                }else if(escolhaMenuDoisDois == 6){ //pib capita
-                    escolhaMenuDoisDois = atributoPibCapita[15];
+                }else if(escolhaMenuDoisDois == 6){
                     pontuacaoUsuario += (pibCapita1 > pibCapita2) ? 1 : 0;
                     pontuacaoOponente += (pibCapita1 < pibCapita2) ? 1 : 0;
                 }else if(escolhaMenuDoisDois == 7){
-                    escolhaMenuDoisDois = atributoSuper[12];
                     pontuacaoUsuario += (superPoder1 > superPoder2) ? 1 : 0;
                     pontuacaoOponente += (superPoder1 < superPoder2) ? 1 : 0;
                 }
 
-            
+            //relaciona o numero do menu com o nome do primeiro atributo escolhido
+                if (escolhaMenuDoisUm == 1){
+                    nomeAtributoUm[50] = "População";
+                }else if(escolhaMenuDoisUm == 2){
+                    nomeAtributoUm[50] = "Área";
+                }else if(escolhaMenuDoisUm == 3){
+                    nomeAtributoUm[50] = "PIB";
+                }else if(escolhaMenuDoisUm == 4){
+                    nomeAtributoUm[50] = "Pontos Turísticos";
+                }else if(escolhaMenuDoisUm == 5){
+                    nomeAtributoUm[50] = "Densidade Demográfica";
+                }else if(escolhaMenuDoisUm == 6){
+                    nomeAtributoUm[50] = "PIB per Capita";
+                }else if(escolhaMenuDoisUm == 7){
+                    nomeAtributoUm[50] = "Super Poder";
+                }
+
+            //relaciona o numero do menu com o nome do segundo atributo escolhido
+                if (escolhaMenuDoisDois == 1){
+                    nomeAtributoUm[50] = "População";
+                }else if(escolhaMenuDoisDois == 2){
+                    nomeAtributoUm[50] = "Área";
+                }else if(escolhaMenuDoisDois == 3){
+                    nomeAtributoUm[50] = "PIB";
+                }else if(escolhaMenuDoisDois == 4){
+                    nomeAtributoUm[50] = "Pontos Turísticos";
+                }else if(escolhaMenuDoisDois == 5){
+                    nomeAtributoUm[50] = "Densidade Demográfica";
+                }else if(escolhaMenuDoisDois == 6){
+                    nomeAtributoUm[50] = "PIB per Capita";
+                }else if(escolhaMenuDoisDois == 7){
+                    nomeAtributoUm[50] = "Super Poder";
+                }
+                
             //resultado das comparacoes
                 printf("\n"); //quebra de linha
-                printf("Você escolheu a comparação dos atributos %s e %s das cartas.\n", escolhaMenuDoisUm, escolhaMenuDoisDois);
+                printf("Você escolheu a comparação dos atributos %s e %s das cartas inseridas.\n", nomeAtributoUm, nomeAtributoDois);
                 printf("Contabilizando a pontuação...\n");
                 printf("\n"); //quebra de linha
                 printf("A sua carta(%s) fez: %d pontos\n", cidade1, pontuacaoUsuario);
