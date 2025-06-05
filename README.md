@@ -13,7 +13,7 @@ Após inserir os dados, você pode escolher entre dois modos de jogo:
 
 As cartas disponíveis para jogo são:
 
-Carta 1:
+Carta 1:  
     Estado: SP  
     Código: A01  
     Nome Da Cidade: Sao Paulo  
@@ -22,7 +22,7 @@ Carta 1:
     PIB: 699.28 bilhões de reais  
     Número de Pontos Turísticos: 50  
 
-Carta 2:
+Carta 2:  
     Estado: RJ  
     Código: B02  
     Nome da Cidade: Rio de Janeiro  
