@@ -16,11 +16,13 @@ int main(){
     //variaveis do menu de navegacao - revisado
         int escolhaMenuRaiz, escolhaMenuUm, escolhaMenuDoisUm, escolhaMenuDoisDois;
 
-    //variaveis da logica de comparacao de dois atributos - revisado
+    //variaveis da logica de comparacao de dois atributos e resultado- revisado
         int comparaPopulacao, comparaArea, comparaPib, comparaPonto, comparaDensidade, comparaCapita, comparaSuper;
-        int pontosCarta1 = 0, pontosCarta2 = 0;
+        int pontuacaoUsuario = 0, pontuacaoOponente = 0;
+        char atributoPop[] = "População", atributoArea[] = "Área", atributoPib[] = "PIB", atributoPonto[] = "Pontos Turísticos";
+        char atributoDensidade[] = "Densidade Populacional", atributoPibCapita[] = "PIB per Capita", atributoSuper[] = "Super Poder";
 
-    //inicializacao do jogo
+    //inicializacao do jogo - revisado
         printf("\n");
         printf("### Bem vindo ao jogo Super Trunfo! ###\n");
         printf("Para começar o jogo, precisamos dos dados da sua carta e da carta de seu oponente.\n");
@@ -192,7 +194,7 @@ int main(){
                         }
                     break;
 
-                //comparacao de super poder
+                //comparacao de super poder - revisado
                     case 7:
                         printf("\n"); //quebra de linha
                         printf("A sua carta, %s, possui Super Poder de %.2f.\n", cidade1, superPoder1);
@@ -207,6 +209,7 @@ int main(){
                         }
                     break;
 
+                //opcao de entrada invalida - revisado
                     default:
                         printf("\n"); //quebra de linha
                         printf("Opção escolhida inválida.\n");
@@ -214,9 +217,11 @@ int main(){
                 }
             break;
 
-        //comparar segundo atributos
+        //comparar segundo atributos - revisado
             case 2:
-                printf("Escolha o primeiro atributo para comparação:\n");
+                printf("\n"); //quebra de linha
+                printf("Você escolheu a comparação de dois atributos.\n");
+                printf("Primeiro, escolha o primeiro atributo para comparação:\n");
                 printf("1. População\n");
                 printf("2. Área\n");
                 printf("3. PIB\n");
@@ -226,7 +231,7 @@ int main(){
                 printf("7. Super Poder\n");
                 printf("Escolha: ");
                 scanf(" %d", &escolhaMenuDoisUm);
-                printf("Escolha o segundo atributo para comparação (diferente do primeiro):\n");
+                printf("Agora, escolha o segundo atributo para comparação (diferente do primeiro):\n");
                 printf("1. População\n");
                 printf("2. Área\n");
                 printf("3. PIB\n");
@@ -237,71 +242,88 @@ int main(){
                 printf("Escolha: ");
                 scanf(" %d", &escolhaMenuDoisDois);
 
-            //verifica se atributos escolhidos sao iguais
+            //verifica se atributos escolhidos sao iguais - revisado
                 if(escolhaMenuDoisDois == escolhaMenuDoisUm){
                     printf("O segundo atributo não pode ser igual ao primeiro. Tente novamente.\n");
                 }
 
-            //comparacao do primeiro atributo
-                if(escolhaMenuDoisUm == 1){
-                    pontosCarta1 += (populacao1 > populacao2) ? 1 : 0;
-                    pontosCarta2 += (populacao1 < populacao2) ? 1 : 0;
-                }else if(escolhaMenuDoisUm == 2){
-                    pontosCarta1 += (area1 > area2) ? 1 : 0;
-                    pontosCarta2 += (area1 < area2) ? 1 : 0;
-                }else if (escolhaMenuDoisUm == 3){
-                    pontosCarta1 += (pib1 > pib2) ? 1 : 0;
-                    pontosCarta2 += (pib1 < pib2) ? 1 : 0;
-                }else if(escolhaMenuDoisUm == 4){
-                    pontosCarta1 += (pontoTur1 > pontoTur2) ? 1 : 0;
-                    pontosCarta2 += (pontoTur1 < pontoTur2) ? 1 : 0;
-                } else if (escolhaMenuDoisUm == 5){
-                    pontosCarta1 += (densidadePop1 < densidadePop2) ? 1 : 0;
-                    pontosCarta2 += (densidadePop1 > densidadePop2) ? 1 : 0;
-                }else if(escolhaMenuDoisUm == 6){
-                    pontosCarta1 += (pibCapita1 > pibCapita2) ? 1 : 0;
-                    pontosCarta2 += (pibCapita1 < pibCapita2) ? 1 : 0;
-                }else if(escolhaMenuDoisUm == 7){
-                    pontosCarta1 += (superPoder1 > superPoder2) ? 1 : 0;
-                    pontosCarta2 += (superPoder1 < superPoder2) ? 1 : 0;
+            //comparacao do primeiro atributo - revisado
+                if(escolhaMenuDoisUm == 1){ //populacao
+                    escolhaMenuDoisUm = atributoPop[12];
+                    pontuacaoUsuario += (populacao1 > populacao2) ? 1 : 0;
+                    pontuacaoOponente += (populacao1 < populacao2) ? 1 : 0;
+                }else if(escolhaMenuDoisUm == 2){ //area
+                    escolhaMenuDoisUm = atributoArea[6];
+                    pontuacaoUsuario += (area1 > area2) ? 1 : 0;
+                    pontuacaoOponente += (area1 < area2) ? 1 : 0;
+                }else if (escolhaMenuDoisUm == 3){ //pib
+                    escolhaMenuDoisUm = atributoPib[4];
+                    pontuacaoUsuario += (pib1 > pib2) ? 1 : 0;
+                    pontuacaoOponente += (pib1 < pib2) ? 1 : 0;
+                }else if(escolhaMenuDoisUm == 4){ //ponto turistico
+                    escolhaMenuDoisUm = atributoPonto[19];
+                    pontuacaoUsuario += (pontoTur1 > pontoTur2) ? 1 : 0;
+                    pontuacaoOponente += (pontoTur1 < pontoTur2) ? 1 : 0;
+                } else if (escolhaMenuDoisUm == 5){ //densidade
+                    escolhaMenuDoisUm = atributoDensidade[23];
+                    pontuacaoUsuario += (densidadePop1 < densidadePop2) ? 1 : 0;
+                    pontuacaoOponente += (densidadePop1 > densidadePop2) ? 1 : 0;
+                }else if(escolhaMenuDoisUm == 6){ //pib capita
+                    escolhaMenuDoisUm = atributoPibCapita[15];
+                    pontuacaoUsuario += (pibCapita1 > pibCapita2) ? 1 : 0;
+                    pontuacaoOponente += (pibCapita1 < pibCapita2) ? 1 : 0;
+                }else if(escolhaMenuDoisUm == 7){ //super poder
+                    escolhaMenuDoisUm = atributoSuper[12];
+                    pontuacaoUsuario += (superPoder1 > superPoder2) ? 1 : 0;
+                    pontuacaoOponente += (superPoder1 < superPoder2) ? 1 : 0;
                 }
 
-            //comparacao do segundo atributo
-                if(escolhaMenuDoisDois == 1){
-                    pontosCarta1 += (populacao1 > populacao2) ? 1 : 0;
-                    pontosCarta2 += (populacao1 < populacao2) ? 1 : 0;
-                }else if(escolhaMenuDoisDois == 2){
-                    pontosCarta1 += (area1 > area2) ? 1 : 0;
-                    pontosCarta2 += (area1 < area2) ? 1 : 0;
-                }else if (escolhaMenuDoisDois == 3){
-                    pontosCarta1 += (pib1 > pib2) ? 1 : 0;
-                    pontosCarta2 += (pib1 < pib2) ? 1 : 0;
-                }else if(escolhaMenuDoisDois == 4){
-                    pontosCarta1 += (pontoTur1 > pontoTur2) ? 1 : 0;
-                    pontosCarta2 += (pontoTur1 < pontoTur2) ? 1 : 0;
+            //comparacao do segundo atributo - revisado
+                if(escolhaMenuDoisDois == 1){ //populacao
+                    escolhaMenuDoisDois = atributoPop[12];
+                    pontuacaoUsuario += (populacao1 > populacao2) ? 1 : 0;
+                    pontuacaoOponente += (populacao1 < populacao2) ? 1 : 0;
+                }else if(escolhaMenuDoisDois == 2){ //area
+                    escolhaMenuDoisDois = atributoArea[6];
+                    pontuacaoUsuario += (area1 > area2) ? 1 : 0;
+                    pontuacaoOponente += (area1 < area2) ? 1 : 0;
+                }else if (escolhaMenuDoisDois == 3){ //pib
+                    escolhaMenuDoisDois = atributoPib[4];
+                    pontuacaoUsuario += (pib1 > pib2) ? 1 : 0;
+                    pontuacaoOponente += (pib1 < pib2) ? 1 : 0;
+                }else if(escolhaMenuDoisDois == 4){ //ponto turistico
+                    escolhaMenuDoisDois = atributoPonto[19];
+                    pontuacaoUsuario += (pontoTur1 > pontoTur2) ? 1 : 0;
+                    pontuacaoOponente += (pontoTur1 < pontoTur2) ? 1 : 0;
                 } else if (escolhaMenuDoisDois == 5){
-                    pontosCarta1 += (densidadePop1 < densidadePop2) ? 1 : 0;
-                    pontosCarta2 += (densidadePop1 > densidadePop2) ? 1 : 0;
-                }else if(escolhaMenuDoisDois == 6){
-                    pontosCarta1 += (pibCapita1 > pibCapita2) ? 1 : 0;
-                    pontosCarta2 += (pibCapita1 < pibCapita2) ? 1 : 0;
+                    escolhaMenuDoisDois = atributoDensidade[23]; //densidade
+                    pontuacaoUsuario += (densidadePop1 < densidadePop2) ? 1 : 0;
+                    pontuacaoOponente += (densidadePop1 > densidadePop2) ? 1 : 0;
+                }else if(escolhaMenuDoisDois == 6){ //pib capita
+                    escolhaMenuDoisDois = atributoPibCapita[15];
+                    pontuacaoUsuario += (pibCapita1 > pibCapita2) ? 1 : 0;
+                    pontuacaoOponente += (pibCapita1 < pibCapita2) ? 1 : 0;
                 }else if(escolhaMenuDoisDois == 7){
-                    pontosCarta1 += (superPoder1 > superPoder2) ? 1 : 0;
-                    pontosCarta2 += (superPoder1 < superPoder2) ? 1 : 0;
+                    escolhaMenuDoisDois = atributoSuper[12];
+                    pontuacaoUsuario += (superPoder1 > superPoder2) ? 1 : 0;
+                    pontuacaoOponente += (superPoder1 < superPoder2) ? 1 : 0;
                 }
 
+            
             //resultado das comparacoes
-                printf("\n");
-                printf("Resultados das comparações:\n");
-                printf("A sua carta fez (%s): %d pontos\n", cidade1, pontosCarta1);
-                printf("A carta do inimigo fez (%s): %d pontos\n", cidade2, pontosCarta2);
-                    if(pontosCarta1 > pontosCarta2){
-                        printf("Você %s vence!\n", cidade1);
-                    }else if(pontosCarta1 < pontosCarta2){
-                        printf("A carta %s vence!\n", cidade2);
-                    }else{
-                        printf("Empate: as duas cartas têm a mesma pontuação.\n");
-                    }
+                printf("\n"); //quebra de linha
+                printf("Você escolheu a comparação dos atributos %s e %s das cartas.\n", escolhaMenuDoisUm, escolhaMenuDoisDois);
+                printf("Contabilizando a pontuação...\n");
+                printf("\n"); //quebra de linha
+                printf("A sua carta(%s) fez: %d pontos\n", cidade1, pontuacaoUsuario);
+                printf("A carta do oponente(%s) fez: %d pontos\n", cidade2, pontuacaoOponente);
+                if(pontuacaoUsuario > pontuacaoOponente){
+                    printf("Você venceu seu oponente com %d pontos a mais!\n", pontuacaoUsuario - pontuacaoOponente);
+                }else if(pontuacaoUsuario < pontuacaoOponente){
+                    printf("Você perdeu do seu oponente por %d pontos de diferença\n", pontuacaoOponente - pontuacaoUsuario);
+                }else{
+                    printf("Você e seu oponente empataram com a mesma pontuação.\n");
+                }
             break;
             
         //finaliza o jogo
