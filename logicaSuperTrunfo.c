@@ -19,7 +19,7 @@ int main(){
     //variaveis da logica de comparacao de dois atributos e resultado- revisado
         int comparaPopulacao, comparaArea, comparaPib, comparaPonto, comparaDensidade, comparaCapita, comparaSuper;
         int pontuacaoUsuario = 0, pontuacaoOponente = 0;
-        char nomeAtributoUm[50], nomeAtributoDois[50];
+        const char *nomeAtributoUm, *nomeAtributoDois;
 
     //inicializacao do jogo - revisado
         printf("\n");
@@ -230,6 +230,7 @@ int main(){
                 printf("7. Super Poder\n");
                 printf("Escolha: ");
                 scanf(" %d", &escolhaMenuDoisUm);
+                printf("\n"); //quebra de linha
                 printf("Agora, escolha o segundo atributo para comparação (diferente do primeiro):\n");
                 printf("1. População\n");
                 printf("2. Área\n");
@@ -296,45 +297,46 @@ int main(){
 
             //relaciona o numero do menu com o nome do primeiro atributo escolhido
                 if (escolhaMenuDoisUm == 1){
-                    nomeAtributoUm[50] = "População";
+                    nomeAtributoUm = "População";
                 }else if(escolhaMenuDoisUm == 2){
-                    nomeAtributoUm[50] = "Área";
+                    nomeAtributoUm = "Área";
                 }else if(escolhaMenuDoisUm == 3){
-                    nomeAtributoUm[50] = "PIB";
+                    nomeAtributoUm = "PIB";
                 }else if(escolhaMenuDoisUm == 4){
-                    nomeAtributoUm[50] = "Pontos Turísticos";
+                    nomeAtributoUm = "Pontos Turísticos";
                 }else if(escolhaMenuDoisUm == 5){
-                    nomeAtributoUm[50] = "Densidade Demográfica";
+                    nomeAtributoUm = "Densidade Demográfica";
                 }else if(escolhaMenuDoisUm == 6){
-                    nomeAtributoUm[50] = "PIB per Capita";
+                    nomeAtributoUm = "PIB per Capita";
                 }else if(escolhaMenuDoisUm == 7){
-                    nomeAtributoUm[50] = "Super Poder";
+                    nomeAtributoUm = "Super Poder";
                 }
 
             //relaciona o numero do menu com o nome do segundo atributo escolhido
                 if (escolhaMenuDoisDois == 1){
-                    nomeAtributoUm[50] = "População";
+                    nomeAtributoDois = "População";
                 }else if(escolhaMenuDoisDois == 2){
-                    nomeAtributoUm[50] = "Área";
+                    nomeAtributoDois = "Área";
                 }else if(escolhaMenuDoisDois == 3){
-                    nomeAtributoUm[50] = "PIB";
+                    nomeAtributoDois = "PIB";
                 }else if(escolhaMenuDoisDois == 4){
-                    nomeAtributoUm[50] = "Pontos Turísticos";
+                    nomeAtributoDois = "Pontos Turísticos";
                 }else if(escolhaMenuDoisDois == 5){
-                    nomeAtributoUm[50] = "Densidade Demográfica";
+                    nomeAtributoDois = "Densidade Demográfica";
                 }else if(escolhaMenuDoisDois == 6){
-                    nomeAtributoUm[50] = "PIB per Capita";
+                    nomeAtributoDois = "PIB per Capita";
                 }else if(escolhaMenuDoisDois == 7){
-                    nomeAtributoUm[50] = "Super Poder";
+                    nomeAtributoDois = "Super Poder";
                 }
                 
             //resultado das comparacoes
                 printf("\n"); //quebra de linha
-                printf("Você escolheu a comparação dos atributos %s e %s das cartas inseridas.\n", nomeAtributoUm, nomeAtributoDois);
+                printf("Você escolheu a comparação dos atributos: '%s' e '%s' das cartas inseridas.\n", nomeAtributoUm, nomeAtributoDois);
                 printf("Contabilizando a pontuação...\n");
                 printf("\n"); //quebra de linha
                 printf("A sua carta(%s) fez: %d pontos\n", cidade1, pontuacaoUsuario);
                 printf("A carta do oponente(%s) fez: %d pontos\n", cidade2, pontuacaoOponente);
+                printf("\n"); //quebra de linha
                 if(pontuacaoUsuario > pontuacaoOponente){
                     printf("Você venceu seu oponente com %d pontos a mais!\n", pontuacaoUsuario - pontuacaoOponente);
                 }else if(pontuacaoUsuario < pontuacaoOponente){
